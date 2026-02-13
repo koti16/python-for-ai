@@ -1,27 +1,9 @@
-# Parent class - general animal
-class Animal:
-    def __init__(self, name):
-        self.name = name
-    
-    def eat(self):
-        return f"{self.name} is eating"
-    
-    def sleep(self):
-        return f"{self.name} is sleeping"
+import os  # noqa: F401
+def   calculate_total(items):
+    total=0
+    for item in items:
+        total+=item['price']*item['quantity']
+    return total
 
-# Child class - specific animal
-class Dog(Animal):
-    def bark(self):
-        return f"{self.name} says woof!"
-
-# Create a dog - using positional argument
-my_dog = Dog("Buddy")
-# Or with named argument
-my_dog2 = Dog(name="Max")
-
-# Dog can do animal things (inherited)
-print(my_dog.eat())    # Buddy is eating
-print(my_dog.sleep())  # Buddy is sleeping
-
-# Dog can also do dog things
-print(my_dog.bark())   # Buddy says woof!
+shopping_cart=[{'name':'apple','price':0.5,'quantity':6},{'name':'banana','price':0.3,'quantity':8}]
+print(calculate_total(shopping_cart))
